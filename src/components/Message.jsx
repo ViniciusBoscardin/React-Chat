@@ -28,8 +28,11 @@ const Message = ({ message }) => {
         <span>Just now</span>
       </div>
       <div className='messageContent'>
-        <p>{message.text}</p>
-        {message.img && <img src={message.img} alt='' />}
+        {message.img ? (
+          <img src={message.img} alt='' />
+        ) : message.text.lenght > 0 ? (
+          <p>{message.text}</p>
+        ) : null}
       </div>
     </div>
   );
